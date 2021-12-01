@@ -23,8 +23,9 @@ module.exports = async (req, res) => {
       }
     );
   }
-  
-  const { name, price, quantity,location, ispublished, category } = value;
+
+  const { name, price, quantity, location, ispublished, category } = value;
+
   await FoodMenu.updateOne(
     { _id: req.params.id },
     {
@@ -34,11 +35,20 @@ module.exports = async (req, res) => {
         quantity,
         location,
         ispublished,
-        category
+        category,
       },
     }
   );
 
-  const data = await FoodMenu.find({ _id: req.params.id });
+  const data = await FoodMenu.find({ _id: req.params.id }, [
+    'name',
+    'price',
+    'quantity',
+    'location',
+    'ispublished',
+    'category',
+    'createdAt',
+    'updatedAt',
+  ]);
   return res.status(200).json({ message: 'foodMenu updated', data });
 };
