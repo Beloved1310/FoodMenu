@@ -13,12 +13,9 @@ const upload = multer({ storage });
 
 const createFoodMenu = require('../controller/foodMenu/createFood');
 const updateFoodMenu = require('../controller/foodMenu/updateFood');
-const getFoodMenuLocation = require('../controller/foodMenu/getFoodMenuLocation');
-const getAllFoodMenu = require('../controller/foodMenu/getAllFoodMenu');
+const getFoodMenuAndLocation = require('../controller/foodMenu/getFoodMenuAndLocation');
 
-router.get('/', asyncMiddleware(getAllFoodMenu));
-
-router.get('/location', asyncMiddleware(getFoodMenuLocation));
+router.get('/', asyncMiddleware(getFoodMenuAndLocation));
 
 router.post(
   '/foodmenu',
