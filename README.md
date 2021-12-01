@@ -36,7 +36,7 @@ This Project is an Application Programming Interface for a food website. This in
 
 # Documentation
 
-The Project is well documented on Postman. The Publication link is [blog post documentation on postman link](https://doc). Click the link to view the documentation.
+The Project is well documented on Postman. The Publication link is [blog post documentation on postman link](https://documenter.getpostman.com/view/15034996/UVJeGwyf). Click the link to view the documentation.
 
 # Testing
 
@@ -44,7 +44,7 @@ The major testing done is manual testing using postman technologies.
 
 # Deployment
 
-The Project live deployment is [blog post deployment link on heroku](https:). Click and use the documentation to know the routes for easy navigation.
+The Project live deployment is [blog post deployment link on heroku](https://foodmenuapi.herokuapp.com/). Click and use the documentation to know the routes for easy navigation.
 
 # Tools Used
 
