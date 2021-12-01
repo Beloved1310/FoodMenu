@@ -1,9 +1,7 @@
 /* eslint camelcase: "off" */
 /* eslint no-underscore-dangle: "off" */
- 
 
 const FoodMenu = require('../../models/foodMenu');
-const User = require('../../models/user')
 const cloudinary = require('../../utilis/cloudinary');
 const createFoodMenu = require('../../validation/foodMenu/createFoodMenu');
 
@@ -15,7 +13,6 @@ module.exports = async (req, res) => {
   const { secure_url: image, public_id: cloudinary_id } =
     await cloudinary.uploader.upload(req.file.path);
 
-    const postedBy =  await User.findOne({ _id: req.user._id },  [ 'fullname', 'email', 'business.name', 'business.phoneNumber' ])
   const savedFoodMenu = await FoodMenu.create({
     image,
     cloudinary_id,
@@ -24,8 +21,7 @@ module.exports = async (req, res) => {
     quantity,
     location,
     category,
-    postedBy
-         
+    vendor: req.user._id,
   });
 
   const data = {
@@ -36,7 +32,7 @@ module.exports = async (req, res) => {
     quantity,
     location,
     category,
-    ispublished: savedFoodMenu.ispublished
+    ispublished: savedFoodMenu.ispublished,
   };
   return res.send({ message: 'Created FoodMenu', data });
 };
