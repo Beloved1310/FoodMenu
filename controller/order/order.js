@@ -1,6 +1,8 @@
+/* eslint no-underscore-dangle: "off" */
+
 const User = require('../../models/user');
 const Order = require('../../models/order');
-const  orderValidation = require('../../validation/order/order')
+const orderValidation = require('../../validation/order/order');
 
 module.exports = async (req, res) => {
   const { value, error } = orderValidation(req.body);
@@ -9,7 +11,7 @@ module.exports = async (req, res) => {
 
   const randomId = Math.random().toString(36).substring(2);
   const userDetail = await User.findOne({ _id: req.user._id }).select(
-    'fullname email _id business.name business.phoneNumber'
+    'fullname email -_id'
   );
 
   const sumTotal = value.foodmenus.reduce(
@@ -25,8 +27,6 @@ module.exports = async (req, res) => {
     totalPrice: sumTotal,
   });
   const createdOrder = await order.save();
-
-  
 
   const data = {
     orderNumber: createdOrder.orderNumber,
