@@ -18,18 +18,19 @@ const FoodMenuSchema = new mongoose.Schema(
       type: Number,
     },
     location: {
-        type: String,
-      },
+      type: String,
+    },
     ispublished: {
-        type: Boolean,
-        default:false,
+      type: Boolean,
+      default: false,
     },
     category: {
-      type:String,
+      type: String,
     },
-     postedBy: {
-       type:Object
-      },
+    vendor: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    },
   },
   { timestamps: true }
 );
