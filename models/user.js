@@ -19,16 +19,16 @@ const UserSchema = new mongoose.Schema(
       required: true,
     },
     isVendor: { type: Boolean, default: false },
-    location:{
-        type: String,
-        required: true,
-    }, 
+    location: {
+      type: String,
+      required: true,
+    },
     business: {
-        name: String,
-        registrationCertificateNumber: Number,
-        phoneNumber: Number,
-        AccountNumber: Number,
-      },
+      name: String,
+      registrationCertificateNumber: Number,
+      phoneNumber: Number,
+      AccountNumber: Number,
+    },
   },
 
   { timestamps: true }
