@@ -5,9 +5,8 @@ module.exports = function validate(input) {
     name: Joi.string().required(),
     quantity: Joi.number().positive().required(),
     price: Joi.number().positive().required(),
-    location:Joi.string().required(),
-    category: Joi.string().valid('breakfast', 'lunch', 'bunch', 'dinner'),
-    ispublished: Joi.boolean().invalid(false),
+    location: Joi.string().required(),
+    category: Joi.string().required(),
   });
   return schema.validate(input);
 };
