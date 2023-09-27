@@ -44,7 +44,7 @@ The major testing done is manual testing using postman technologies.
 
 # Deployment
 
-The Project live deployment is [blog post deployment link on heroku](https://foodmenuapi.herokuapp.com/). Click and use the documentation to know the routes for easy navigation.
+The Project live deployment is [blog post deployment link on vercel](https://vercel.com/beloved1310/food-menu). Click and use the documentation to know the routes for easy navigation.
 
 # Tools Used
 
